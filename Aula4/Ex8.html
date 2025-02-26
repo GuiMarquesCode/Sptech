@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    <h1>Deposito e saque</h1>
+    <div id="div_mensagem">Saldo atual é: 0</div>
+    <br>
+
+    <input type="number" id="input_valor">
+    <br>
+    <button id="bt_Depositar" onclick="depositar()">Depositar</button>
+    <button id="bt_Sacar" onclick="sacar()">Sacar</button>
+</body>
+</html>
+
+<script>
+var valorTotal = 0;
+    function depositar(){
+        var valor = Number(input_valor.value);
+        valorTotal = valorTotal + Number(valor);
+        div_mensagem.innerHTML = `Valor depositado: ${valor} <br> Saldo atual é: ${valorTotal}!`;
+    }
+    function sacar(){
+        var valor = Number(input_valor.value);
+        valorTotal = valorTotal - Number(valor);
+        div_mensagem.innerHTML = `Valor depositado: ${valor} <br> Saldo atual é: ${valorTotal}!`;
+    }
+</script>

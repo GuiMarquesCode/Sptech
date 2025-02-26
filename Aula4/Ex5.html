@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média SPTech</title>
+</head>
+<body>
+
+    <h2>Calculadora de Média SPTech</h2>
+
+    <h1>Nome do Aluno:</h1>
+    <input type="text" id="input_nome"><br><br>
+
+    <h1>Nota da Avaliação Continuada:</h1>
+    <input type="number" id="input_continuada"><br><br>
+
+    <h1>Nota da Avaliação Semestral:</h1>
+    <input type="number" id="input_semestral"><br><br>
+
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+</body>
+</html>
+<script>
+    function calcularMedia() {
+        var nome = input_nome.value;
+        var notaContinuada = parseFloat(input_continuada.value);
+        var notaSemestral = parseFloat(input_semestral.value);
+
+        var media = (notaContinuada * 0.4) + (notaSemestral * 0.6);
+
+        alert("A média de " + nome + " será de " + media.toFixed(2));
+    }
+</script>
