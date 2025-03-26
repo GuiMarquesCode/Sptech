@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+
+    <h2>Gerador de Tabuada</h2>
+
+    <label>Digite um número:</label>
+    <input type="number" id="numero"><br>
+
+    <button onclick="verTabuada()">Ver Tabuada</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>
+
+<script>
+    function verTabuada() {
+        var num = Number(numero.value);
+        var texto = "";
+
+        if (num) {
+            texto += `${num} x 1 = ${num * 1} <br>`;
+            if (true) texto += `${num} x 2 = ${num * 2} <br>`;
+            if (true) texto += `${num} x 3 = ${num * 3} <br>`;
+            if (true) texto += `${num} x 4 = ${num * 4} <br>`;
+            if (true) texto += `${num} x 5 = ${num * 5} <br>`;
+            if (true) texto += `${num} x 6 = ${num * 6} <br>`;
+            if (true) texto += `${num} x 7 = ${num * 7} <br>`;
+            if (true) texto += `${num} x 8 = ${num * 8} <br>`;
+            if (true) texto += `${num} x 9 = ${num * 9} <br>`;
+            if (true) texto += `${num} x 10 = ${num * 10} <br>`;
+        }
+
+        resultado.innerHTML = texto;
+    }
+</script>

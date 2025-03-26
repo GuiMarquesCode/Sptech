@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <tizle>Desafio</tizle>
+</head>
+<body>
+    Informe seu time:
+    <input type="text" id="input_time">
+    <br><br>
+
+    Informe a quantidade de titulos:
+    <input type="number" id="input_titulos">
+    <br><br>
+
+    Informe quantos anos o time tem:
+    <input type="number" id="input_idade">
+    <br><br>
+
+    Informe quantos gols o time tem em sua historia:
+    <input type="number" id="input_gols">
+    <br><br>
+
+    <button onclick="analise()">Analisar dados!</button>
+
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function analise(){
+        var time = input_time.value;
+        var titulos = Number(input_titulos.value);
+        var idade = Number(input_idade.value);
+        var gols = Number(input_gols.value);
+
+        var mediaIdade   = (idade/titulos);
+        var mediaGols = (gols / idade);
+        div_mensagem.innerHTML += `O ${time} tem uma média de ${mediaIdade} anos para ganhar um título. <br>`;
+        if(mediaGols < 50){
+            
+            div_mensagem.innerHTML += `O ${time} não faz tantos gols com uma média de ${mediaGols} , você sofre para comemorar`;
+
+        }
+        if(mediaGols >= 50){
+        
+            div_mensagem.innerHTML += `O ${time} tem uma média de ${mediaGols} gols por ano, você comemora bastante!`;
+
+        }
+        if(mediaGols > 70){
+
+            div_mensagem.innerHTML += `O ${time} tem uma média incrível de ${mediaGols} gols por ano, parabéns você comemora muito!`;
+
+        }
+
+
+
+    }       
+
+</script>

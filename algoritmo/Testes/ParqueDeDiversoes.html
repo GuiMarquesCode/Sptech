@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o nome:
+    <input type="text" id="input_nome">
+    <br><br>
+
+    Informe a altura:
+    <input type="number" id="input_altura">
+    <br><br>
+
+    Idade:
+    <input type="number" id="input_idade">
+    <br><br>
+
+    Está acompanhabrdo pelos pais:
+    <Select id="select_pais">
+        <option>Sim</option>
+        <option>Não</option>
+    </Select>
+    <br>
+
+    <Button onclick="avaliar()">Avaliar</Button>
+    <br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function avaliar(){
+        var nome = input_nome.value;
+        var altura = Number(input_altura.value);
+        var idade = Number(input_idade.value);
+        var pais = select_pais.value;
+
+        if(altura >= 1.5){
+            if (pais == "Sim" || idade >= 18){
+                div_mensagem.innerHTML = "Pode entrar";
+            }else{
+                div_mensagem.innerHTML ="Não Pode entrar!";
+            }
+
+        }else{
+            div_mensagem.innerHTML = "Não pode entrar!";
+
+        }
+
+    }   
+
+</script>

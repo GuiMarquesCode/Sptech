@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde moro</title>
+</head>
+<body>
+    <h1>Onde eu moro!</h1>
+    
+    <br>
+    <p>INserir nome da Rua/Avenida/vila: </p>
+    <input type="text" id="input_morada">
+    <br>
+    <p>Numero da casa:</p>
+    <input type="number" id="input_numero">
+    <br>
+    <button onclick="enderreco()">Onde eu moro</button>
+
+</body>
+</html>
+
+<script>
+
+    function endereco(){
+
+        alert("Seu logradouro " + input_morada.value);
+        alert("O número do logradouro é " + input_numero.value)
+    }
+
+</script>

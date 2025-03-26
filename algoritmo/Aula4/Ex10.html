@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Eleição</title>
+</head>
+<body>
+
+    <h2>Resultado da Eleição</h2>
+
+    <label>Votos do Candidato A:</label>
+    <input type="number" id="votosA"><br>
+
+    <label>Votos do Candidato B:</label>
+    <input type="number" id="votosB"><br>
+
+    <label>Votos Brancos:</label>
+    <input type="number" id="votosBrancos"><br>
+
+    <label>Votos Nulos:</label>
+    <input type="number" id="votosNulos"><br>
+
+    <button onclick="calcularResultado()">Resultado da Eleição</button>
+
+    <p id="resultado"></p>
+
+</body>
+</html>
+
+<script>
+    function calcularResultado() {
+        var a = Number(votosA.value);
+        var b = Number(votosB.value);
+        var brancos = Number(votosBrancos.value);
+        var nulos = Number(votosNulos.value);
+
+        var total = a + b + brancos + nulos;
+        var invalidos = brancos + nulos;
+
+        var percA = (a / total) * 100;
+        var percB = (b / total) * 100;
+        var percInvalidos = (invalidos / total) * 100;
+
+      
+            resultado.innerHTML = 
+                `Total de votos: ${total} <br>
+                Candidato A: ${percA}% (${a} votos) <br>
+                Candidato B: ${percB}% (${b} votos) <br>
+                Inválidos: ${percInvalidos}% (${invalidos} votos)`;
+        
+    }
+</script>

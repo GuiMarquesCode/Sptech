@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Desempenho</title>
+</head>
+<body>
+    Informe a Nota 1:
+    <br>
+    <input type="text" id="input_nota1">
+    <br>
+    Informe a Nota 2:
+    <br>
+    <input type="text" id="input_nota2">
+    <br>
+    Informe a Nota 3:
+    <br>
+    <input type="text" id="input_nota3">
+    <br>
+    <button onclick="analisarDesempenho()">Analisar desempenho</button>
+    <div id="exibir_mensagem"></div>
+
+    <script>
+        function analisarDesempenho() {
+            var nota1 = Number(input_nota1.value);
+            var nota2 = Number(input_nota2.value);
+            var nota3 = Number(input_nota3.value);
+            var media = (nota1 + nota2 + nota3) / 3;
+            var mensagem = `Sua média foi de ${media.toFixed(2)}.`;
+            exibir_mensagem.innerHTML = mensagem;
+            if (media > 9.4) {
+                exibir_mensagem.innerHTML += `<br>Parabéns, você é fora de série!`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times</title>
+</head>
+<body>
+    Informe seu time
+    <input type="text"  id="input_time">
+    <br>
+
+    <button onclick="falar()">Falar sobre este time</button>
+    <div
+     id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function falar(){
+
+        var time  = input_time.value;
+        var mensagem = '';
+        var cor ="";
+        var background = "";
+        if(time == "Corinthians"){
+            mensagem = "Salve o Corinthians";
+            cor = "white";
+            background = "black";
+        }else if (time == "Palmeiras"){
+            mensagem = "Salve o alviverde imponente";
+            cor = "white";
+            background = "green";
+        }else if(time == "Santos"){
+            mensagem = "Agora quem dá bola é o Santos";
+            cor = "black";
+            background = "white";
+        }else if(time == "São Paulo"){
+            mensagem = "Salve o tricolor paulista";
+            cor = "red";
+            background = "black";
+        }else{
+            mensagem = "Informe um time paulista!";
+            cor = "black";
+            background = "white";
+        }
+        div_mensagem.innerHTML += `<p style = "color: ${cor}; background-color: ${background};">
+            ${mensagem}
+            </p>`;
+
+    
+
+    }
+
+</script>

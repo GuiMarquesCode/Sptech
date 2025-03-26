@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Frequência</title>
+</head>
+<body>
+    Informe a frequência do aluno:
+    <input type="number" id="input_freq">
+    <br>
+    <button onclick="Analisar()">Analisar frequencia</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Analisar(){
+    var frequencia = Number(input_freq.value);
+    var foto = '';
+    if(frequencia < 50){
+        foto = 'https://img.freepik.com/fotos-premium/jovem-adulto-hispanico-louco-turista-ou-conceito-de-viagem_1194-417013.jpg';
+    }else{
+        foto = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXCeU0RDeJoK_IPt2Duj__qWHWJIg9g-3dQg&s';
+    }
+    div_mensagem.innerHTML = `<img src = "${foto}" >`;
+}
+</script>

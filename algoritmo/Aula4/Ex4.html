@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ki de Guerreiro Sayajin</title>
+</head>
+<body>
+
+    <h2>Calculadora de Ki de Guerreiro Sayajin</h2>
+
+    <h1>Nome do Guerreiro:</h1>
+    <input type="text" id="input_nome"><br><br>
+
+    <h1>Ki Normal:</h1>
+    <input type="number" id="input_ki"><br><br>
+
+    <button onclick="calcularKi()">Ver ki em cada forma</button>
+
+</body>
+</html>
+<script>
+    function calcularKi() {
+        var nome = input_nome.value;
+        var kiNormal = parseFloat(input_ki.value);
+
+        var kiSuperSayajin = kiNormal * 50;
+        var kiSuperSayajin2 = kiNormal * 100;
+
+        alert(nome + " no Super Sayajin tem um ki de: " + kiSuperSayajin);
+        alert(nome + " no Super Sayajin 2 tem um ki de: " + kiSuperSayajin2);
+    }
+</script>

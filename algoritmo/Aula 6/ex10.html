@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar</title>
+</head>
+<body>
+    Informe a velocidade que estava dirigindo (Km/h):
+    <input type="number" id="input_velocidade">
+    <br><br>
+
+    informe o limite de velocidade da via(Km/h):
+    <input type="number" id="input_limite">
+    <br><br>
+
+    <button onclick="verificar()">Verificar</button>
+
+    <div id="div_mensagem">
+
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+
+        var velocidade = Number(input_velocidade.value);
+        var limite = Number(input_limite.value);
+
+        var aviso = limite * 1.2;
+
+        if(velocidade <= limite){
+            div_mensagem.innerHTML = 'Velocidade dentro do limite. Boa direção';
+        }else if(velocidade <= aviso){
+            div_mensagem.innerHTML = 'Atenção! Excedendo o limite permitido';
+        }else{
+            div_mensagem.innerHTML = 'Multa grave! Velocidade muito acima do permitido';
+        }
+
+    }
+
+</script>

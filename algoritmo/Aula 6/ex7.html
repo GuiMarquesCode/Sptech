@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricionista</title>
+</head>
+<body>
+    Informe a quantidade de pães franceses que tem comido ao dia:
+    <input type="number" id="input_paes">
+    <br><br>
+    Informe a quantidade de pacotes de bolacha que tem comido ao dia:
+    <input type="number" id="input_bolacha">
+    <br><br>
+    Informe a quantidade de achocolatados tem comido ao dia:
+    <input type="number" id="input_achocolatados">
+    <br><br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+
+        var paes = (Number(input_paes.value)*50);
+        var bolacha = (Number(input_bolacha.value)*80);
+        var achocolatado = (Number(input_achocolatados.value)*70);
+
+        totalCalorias = paes + bolacha + achocolatado;
+
+        if(totalCalorias < 200){
+            div_mensagem.innerHTML = `Parabéns, vai ficar em forma!`;
+        }else if(totalCalorias <= 400){
+            
+            div_mensagem.innerHTML = `Cuidado, vai ficar menos saudável!`;
+            
+        }else{
+            div_mensagem.innerHTML = `Alerta critico de saúde!`;
+        }
+
+    }
+
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series</title>
+</head>
+<body>
+    Informe a ultima série que você assitiu:
+    <input type="text" id="input_serie">
+    <br><br>
+    Informe o total de episodeos assistidos:
+    <input type="number" id="input_episodios">
+    <br><br>
+    <button onclick="verificaSerie()">Verificar nível</button>
+    <br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function verificaSerie(){
+        var serie = input_serie.value;
+        var episodios = Number(input_episodios.value);
+        var horas = (episodios * 22) /60;
+        div_mensagem.innerHTML += `Vejo que você gosta da série ${serie}! <br>`;
+        if(horas >= 30){
+            div_mensagem.innerHTML += `Uau, você realmente gosta dessa série! <br>`;
+        }
+    }
+</script>

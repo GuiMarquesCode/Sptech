@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão fidelidade</title>
+</head>
+<body>
+    
+    Informe a quantidade de passagens que deseja adquirir:
+    <br><br>
+
+    <input type="number" id="input_passagem">
+    <br><br>
+
+    <button onclick="compra()">Comprar</button>
+
+</body>
+</html>
+
+<script>
+
+    function compra(){
+
+        var passagem = Number(input_passagem.value);
+        var total = 0;
+        if(passagem >= 8 && passagem <= 50){
+            if(passagem <= 19){
+                total = (passagem * 4.40) * 0.97;
+                alert(`Total a pagar: R$${total}`);
+            }else if(passagem <= 49 ){
+                total = (passagem * 4.40) * 0.95;
+                alert(`Total a pagar: R$${total}`);
+            }else{
+                total = (passagem * 4.40) * 0.93;
+                alert(`Total a pagar: R$${total}`);
+            }
+
+
+        }else{
+
+            alert("Quantidade inválida para Fidelidade!");
+        }
+
+    }
+
+</script>

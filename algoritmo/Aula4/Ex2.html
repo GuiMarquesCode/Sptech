@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza!</title>
+</head>
+<body>
+    <h1>Informe o valor da pizza:</h1>
+    <input type="text" id="input_valor">
+
+    <br><br>
+
+    <h1>Informe a quantidade de amigos: </h1>
+    <input type="text"  id="input_amigos">
+
+    <br><br>
+
+    <button onclick="calculo()">#lovePizza</button>
+</body>
+</html>
+
+<script>
+
+    function calculo(){
+        var valor = parseFloat( input_valor.value);
+        var qntAmigos = parseFloat(input_amigos.value);
+        var result = valor/qntAmigos;
+
+        alert('Cada um dos'+ qntAmigos +' amigos vai pagar R$' + result);
+
+    }
+
+</script>

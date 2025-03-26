@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida</title>
+</head>
+<body>
+    Nome do passageiro:
+    <br>
+    <input type="text" id="input_nome">
+    <br><br>
+    Distância em km do local atual até o destino do passageiro:
+    <br>
+    <input type="text" id="input_distancia">
+    <br><br>
+    Bandeira da corrida(1, 2 ou 3):
+    <br>
+    <input type="number" id="input_bandeira">
+    <br><br>
+    Horário da corrida:
+    <br>
+    <input type="number" id="input_horas">
+    <br><br>
+    <button onclick="calcular()">Calcular corrida</button>
+    <br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+function calcular(){
+var nome = input_nome.value;
+var distancia = Number(input_distancia.value);
+var bandeira = Number(input_bandeira.value);
+var hora = Number(input_horas.value);
+
+var valor = distancia * 1.25;
+
+
+if(bandeira == 1){
+    if(hora <= 6){
+        var total = valor + (valor * 0.05);   
+    }else if(hora <= 12){
+        var total = valor + (valor * 0.10); 
+    }else if(hora <= 23){
+        var total = valor + (valor * 0.15); 
+    }
+
+    div_mensagem.innerHTML = `Olá ${nome} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${total}. `
+
+}else if(bandeira == 2){
+    if(hora <= 6){
+        var total = valor + (valor * 0.10);   
+    }else if(hora <= 12){
+        var total = valor + (valor * 0.20); 
+    }else if(hora <= 23){
+        var total = valor + (valor * 0.30); 
+}
+
+div_mensagem.innerHTML = `Olá ${nome} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${total}. `
+
+}else if(bandeira == 3){
+    if(hora <= 6){
+        var total = valor + (valor * 0.15);   
+    }else if(hora <= 12){
+        var total = valor + (valor * 0.30); 
+    }else if(hora <= 23){
+        var total = valor + (valor * 0.45); 
+}
+
+div_mensagem.innerHTML = `Olá ${nome} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${total}. `
+
+}else if (bandeira > 3){
+    div_mensagem.innerHTML = `Insira uma bandeira válida`
+}
+
+}
+
+</script>

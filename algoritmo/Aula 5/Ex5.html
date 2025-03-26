@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Conta de Luz</title>
+</head>
+<body>
+    Informe a quantidade de KWh consumida no mês:
+    <br>
+    <input type="text" id="input_kWh">
+    <br>
+    <button onclick="calcularConta()">Calcular conta de luz</button>
+
+    <script>
+        function calcularConta() {
+            var kWh = Number(input_kWh.value);
+            var valorConta = kWh * 0.85; 
+            if (kWh < 100) {
+                valorConta *= 0.9; 
+            }
+            alert(`O valor da conta a ser paga é R$${valorConta}`);
+        }
+    </script>
+</body>
+</html>

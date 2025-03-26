@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Umidade</title>
+</head>
+<body>
+    Informe a umidade atual do ambiente:
+    <input type="number" id="input_umidade">
+    <br><br>
+
+    <button onclick="verificarUmidade()">Verificar Umidade</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function verificarUmidade() {
+        var umidade = Number(input_umidade.value);
+
+        if (umidade < 0 || umidade > 100) {
+            div_mensagem.innerHTML = 'Erro: Informe um valor entre 0 e 100%';
+        } else if (umidade < 12) {
+            div_mensagem.innerHTML = 'Estado de Emergência';
+        } else if (umidade < 20) {
+            div_mensagem.innerHTML = 'Estado de Alerta';
+        } else if (umidade <= 30) {
+            div_mensagem.innerHTML = 'Estado de Atenção';
+        } else {
+            div_mensagem.innerHTML = 'Nenhum risco';
+        }
+    }
+</script>

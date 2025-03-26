@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojis</title>
+</head>
+<body>
+    Me fale como está se sentindo: 
+    <select id="select_humor">
+
+        <option>Feliz</option>
+        <option>Triste</option>
+        <option>Bravo</option>
+        <option>Surpreso</option>
+        <option>Cansado</option>
+
+    </select>
+    <br><br>
+    <button onclick="mostrar()">Mostrar Humor</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function mostrar(){
+        var humor = select_humor.value;
+
+        if(humor == "Feliz"){
+            div_mensagem.innerHTML = "😁";
+        }else if(humor == "Triste"){
+            div_mensagem.innerHTML = "😥";
+        }else if(humor == "Bravo"){
+            div_mensagem.innerHTML = "🤬";
+        }else if(humor == "Surpreso"){
+            div_mensagem.innerHTML = "🤯";
+        }else if(humor == "Cansado"){
+            div_mensagem.innerHTML = "🥱"; 
+        }
+        
+
+    }
+
+</script>

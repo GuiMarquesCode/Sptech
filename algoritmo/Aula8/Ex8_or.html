@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augusto Bivio</title>
+</head>
+<body>
+    Informe o nome da empresa:
+    <br>
+    <input type="text" id="input_empresa">
+    <br><br>
+
+    Informe a bolsa da empresa:
+    <br>
+    <input type="text" id="input_bolsa">
+    <br><br>
+
+    Informe o valor do VR da empresa:
+    <br>
+    <input type="text" id="input_vale">
+    <br><br>
+
+    Informe o tempo de deslocamento empresa -> SPTech (minutos):
+    <br>
+    <input type="text" id="input_deslocamento">
+    <br><br>
+
+    <button onclick="verificar()">É preferida?</button>
+    <br><br>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+
+        var nomeEmpresa = input_empresa.value;
+        var bolsa = Number(input_bolsa.value);
+        var vale = Number(input_vale.value);
+        var tempo = Number(input_deslocamento.value);
+
+        if(bolsa >= 1800 || vale >= 20 || tempo <= 30){
+
+            div_mensagem.innerHTML = `A empresa ${nomeEmpresa} é uma de suas preferências`;
+
+        }else{
+
+            div_mensagem.innerHTML = `A empresa ${nomeEmpresa} está fora da sua lista`;
+
+        }
+
+    }
+
+</script>

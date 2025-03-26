@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de VT</title>
+</head>
+<body>
+
+    <h2>Cálculo de Vale-Transporte</h2>
+
+    Valor da passagem de ônibus (R$):
+    <input type="number" id="valorOnibus"><br>
+
+     Quantidade de viagens por mês:
+    <input type="number" id="qtdViagens"><br>
+
+    Distância casa-trabalho (km):
+        
+    <input type="number" id="distancia"><br>
+
+    <button onclick="calcularVT()">Calcular VT</button>
+
+    <div id="resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function calcularVT() {
+        var valorOnibus = Number(valorOnibus.value);
+        var qtdViagens = Number(qtdViagens.value);
+        var distancia = Number(distancia.value);
+        var valorUberKm = 0.75;
+
+
+            var viagensUber = qtdViagens * 0.1; 
+            var viagensOnibus = qtdViagens - viagensUber;
+
+            var gastoOnibus = viagensOnibus * valorOnibus;
+            var gastoUber = viagensUber * (distancia * valorUberKm);
+
+            var gastoTotal = gastoOnibus + gastoUber;
+
+            resultado.innerHTML = `Você vai gastar R$${gastoTotal} por mês com transporte.`;
+        
+    }
+</script>

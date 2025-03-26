@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Infomre como está se sentindo hoje:
+    <input type="text" id="input_sentimento">
+    <br><br>
+    <button onclick="mostrar()">Mostrar Humor</button>
+
+    <div id="div_mensagem">
+
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    function mostrar(){
+
+        var emocao = input_sentimento.value;
+
+        if(emocao == "Feliz"){
+            div_mensagem.innerHTML = '<img src="https://img.freepik.com/vetores-premium/emoji-feliz-levantando-os-punhos-fechados-fazendo-um-gesto-de-vitoria-ou-celebracao_1303870-395.jpg?semt=ais_hybrid">';
+        }else if(emocao == "Triste"){
+            div_mensagem.innerHTML = '<img src ="https://thumbs.dreamstime.com/b/emoticon-triste-18589362.jpg">';
+        }else if(emocao == "Bravo"){
+            div_mensagem.innerHTML = '<img src ="https://cdn-icons-png.flaticon.com/512/743/743229.png">';
+        }
+        else if(emocao == "Surpreso"){
+            div_mensagem.innerHTML = '<img src ="https://cdn-icons-png.flaticon.com/512/743/743229.png">';
+        }
+        else if(emocao == "Cansado"){
+            div_mensagem.innerHTML = '<img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUMQkX0cfk9NlKrZyycqBSa0I3SzU_9gErjg&s">';
+        }
+
+    }
+
+</script>

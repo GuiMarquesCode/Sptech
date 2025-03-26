@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+</head>
+<body>
+
+    <h2>Calculadora Simples</h2>
+
+    <h1>Digite o primeiro número:</h1>
+    <input type="number" id="input_num1"><br><br>
+
+    <h1>Digite o segundo número:</h1>
+    <input type="number" id="input_num2"><br><br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+
+</body>
+</html>
+<script>
+    function somar() {
+        var num1 = parseFloat(input_num1.value);
+        var num2 = parseFloat(input_num2.value);
+        var resultado = num1 + num2;
+        alert("A soma entre " + num1 + " e " + num2 + " é " + resultado);
+    }
+
+    function subtrair() {
+        var num1 = parseFloat(input_num1.value);
+        var num2 = parseFloat(input_num2.value);
+        var resultado = num1 - num2;
+        alert("A diferença entre " + num1 + " e " + num2 + " é " + resultado);
+    }
+
+    function multiplicar() {
+        var num1 = parseFloat(input_num1.value);
+        var num2 = parseFloat(input_num2.value);
+        var resultado = num1 * num2;
+        alert("O produto entre " + num1 + " e " + num2 + " é " + resultado);
+    }
+
+    function dividir() {
+        var num1 = parseFloat(input_num1.value);
+        var num2 = parseFloat(input_num2.value);
+        var resultado = num1 / num2;
+        alert("A razão entre " + num1 + " e " + num2 + " é " + resultado.toFixed(2));
+    }
+</script>

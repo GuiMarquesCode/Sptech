@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformação dos Saiyajins</title>
+</head>
+<body>
+
+    <h1>Transformação dos Saiyajins</h1>
+    <label>Digite o ki base do guerreiro Saiyajin:</label><br>
+    <input type="number" id="kiBase" ><br><br>
+
+    <h2>Transformar em...</h2>
+    <button onclick="transformarSSJ()">SSJ</button>
+    <button onclick="transformarSSJ2()">SSJ2</button>
+    <button onclick="transformarSSJ3()">SSJ3</button>
+
+    <div id="resultado"></div>
+
+ 
+
+</body>
+</html>
+   <script>
+        function transformarSSJ() {
+            var kiBase = Number(kiBase.value); 
+            var novoKi = kiBase * 50;
+            resultado.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${novoKi}.`;
+        }
+
+        function transformarSSJ2() {
+            var kiBase = Number(kiBase.value);
+            var novoKi = kiBase * 100;
+            resultado.innerHTML = `Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${novoKi}.`;
+        }
+
+        function transformarSSJ3() {
+            var kiBase = Number(kiBase.value); 
+            var novoKi = kiBase * 200;
+            resultado.innerHTML = `Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${novoKi}.`;
+        }
+    </script>

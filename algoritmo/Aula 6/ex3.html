@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensação Térmica</title>
+</head>
+<body>
+    <h3>Informe a temperatura (°C):</h3>
+    <input type="number" id="input_temperatura">
+    <br><br>
+    <button onclick="verificarTemperatura()">Verificar Sensação</button>
+    <div id="div_resultado"></div>
+
+    <script>
+        function verificarTemperatura() {
+            var temp = Number(input_temperatura.value);
+            var mensagem = "";
+
+            if (temp < 14) {
+                mensagem = " Congelante";
+            } else if (temp <= 21) {
+                mensagem = " Com Frio";
+            } else if (temp <= 24) {
+                mensagem = " Confortável";
+            } else if (temp <= 31) {
+                mensagem = " Com Calor";
+            } else {
+                mensagem = " Calor Escaldante";
+            }
+
+            div_resultado.innerHTML = `${mensagem}`;
+        }
+    </script>
+</body>
+</html>
