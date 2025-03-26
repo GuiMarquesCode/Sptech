@@ -40,12 +40,10 @@
         var idade = Number(input_idade.value);
         var pais = select_pais.value;
 
-        if(altura >= 1.5){
-            if (pais == "Sim" || idade >= 18){
+        if(altura >= 1.5 && (idade >= 18 || pais == "Sim")) {
+            
                 div_mensagem.innerHTML = "Pode entrar";
-            }else{
-                div_mensagem.innerHTML ="Não Pode entrar!";
-            }
+            
 
         }else{
             div_mensagem.innerHTML = "Não pode entrar!";

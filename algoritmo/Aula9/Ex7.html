@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o login: 
+    <br><br>
+    <input type="text"  id="input_login">
+    <br><br>
+
+    Informe a senha:
+    <br><br>
+    <input type="password" id="input_passwd">
+    <br><br>
+
+    Informe a pessoal:
+    <br><br>
+    <input type="text" id="input_informacao">
+    <br><br>
+
+    <button onclick="autenticar()">Autenticar</button>
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    var cont = 3;
+    function autenticar(){
+        var login = input_login.value;
+        var senha = input_passwd.value;
+        var info = input_informacao.value;
+    
+        if(cont <= 3 && cont > 0){
+
+        
+        
+        if(login == "ana" && senha =="braga" && (info == "1949" || info == "louro josé")){
+            div_mensagem.innerHTML = "Usuário autenticado!"
+            cont = 3;
+        }else{
+            div_mensagem.innerHTML = "Falha na autenticação! <br>"
+            div_mensagem.innerHTML += "tentativas restantes " + cont; 
+            cont--;
+        }
+    }else{
+        div_mensagem.innerHTML = "Usuário bloqueado procure o gerente!"
+    }
+    }
+</script>

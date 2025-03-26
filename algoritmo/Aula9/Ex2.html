@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o tamanho da tela do celular:
+    <br><br>
+
+    <input type="number" id="input_tela">
+    <br><br>
+
+    <select id="select_cor">
+
+        <option>Preto</option>
+        <option>Prata</option>
+        <option>Azul</option>
+        <option>Vermelho</option>
+    </select>
+    <br><br>
+
+    <button onclick="ver()">Será que ele gosta?</button>
+
+    <div id="div_mensagem">
+
+
+    </div>
+</body>
+</html>
+<script>
+
+    function ver(){
+
+        var tamanho = Number(input_tela.value);
+
+        var cor = select_cor.value;
+
+        if((cor == "Preto" || cor =="Prata") && tamanho >= 6.5){
+            div_mensagem.innerHTML = `<img src = "https://f.i.uol.com.br/fotografia/2021/12/23/164027693061c4a3c247519_1640276930_3x2_rt.jpg">`;
+        }else{
+            div_mensagem.innerHTML = `<img src = "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F754c1bfe-c47b-48f7-a8b8-94dd8036c870_719x695.jpeg">`;
+        }
+
+    }
+
+</script>
