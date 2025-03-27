@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número entre 0 e 200:
+    <br><br>
+
+    <input type="number" id="input_numero">
+    <br><br>
+
+
+    <button onclick="verificar()">Viva o 7</button>
+    <div id="div_mensagem">
+    </div>
+</body>
+</html>
+<script>
+    function  verificar(){
+        var numero = Number(input_numero.value);
+        var contador = 0;
+        div_mensagem.innerHTML = "";
+        while(contador <= numero && (numero >= 0 || numero <= 200)){
+            if(contador % 7 == 0){
+                div_mensagem.innerHTML += `${contador} <br>`;
+                contador++;
+            }else{
+                contador++;
+            }
+        }
+
+    }
+
+</script>

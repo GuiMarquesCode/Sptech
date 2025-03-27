@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Informe o valor do salário:
+    <br><br>
+    <input type="number" id="input_salario">
+    <br><br>
+
+    Informe o adicional do mês:
+    <br><br>
+    <input type="number" id="input_adicional">
+    <br><br>
+
+    Informe o bônus:
+    <br><br>
+    <input type="number" id="input_bonus">
+    <br><br>
+
+    <button onclick="analisar()">Analisar 
+        minha renda</button>
+    <br><br>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    function analisar(){
+
+        var salario = Number(input_salario.value);
+        var adicional = Number(input_adicional.value);
+        var bonus = Number(input_bonus.value);
+
+        var ir = 0;
+        var inss = 0;
+        var fgts = 0;
+        var salIr = 0;
+
+        var salarioBruto = (salario + adicional + bonus);
+        var salarioLiquido = 0;
+
+        if(salarioBruto >= 10000){
+            ir = salarioBruto * 0.125
+        }
+        var salIr = salarioBruto - ir;
+        var inss = salIr * 0.10;
+        var fgts = salIr * 0.08;
+       
+        salarioLiquido = salIr - inss - fgts;
+     
+
+        div_mensagem.innerHTML = `  
+        Com o salário de R$${salario} com adicional de R$${adicional}e bônus de R$${bonus}, você tem: 
+        <br>
+            Bruto: R$${salarioBruto}
+        <br>
+            IR: R$${ir}  
+        <br>
+            INSS: R$${inss}  
+        <br>
+            FGTS: R$${fgts}
+        <br>
+            Líquido: R$${salarioLiquido} <br> <br>`;
+
+        var reserva = 0;
+        var reservaAno = 0;
+        if( salarioLiquido >= 2500){
+
+            reserva = salarioLiquido * 0.15;
+            reservaAno = reserva * 12;
+
+             div_mensagem.innerHTML += `Com a renda de R$${salarioLiquido}, é recomendado poupar R$${reserva}, para que em um ano tenha poupado R$${reservaAno} `;
+        }else{
+            div_mensagem.innerHTML += `Com a renda de R$${salarioLiquido}, é recomendado obter renda extra para realizar uma poupança.`;
+        }
+    }
+</script>
