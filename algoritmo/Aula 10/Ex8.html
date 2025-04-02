@@ -24,13 +24,19 @@
     function papagaio(){
 
         contador= 0; 
-
+        contador2 = 0;
         var numero = Number(input_number.value);
         var frase = input_frase.value;
+        var mensagem ="";
 
+        while (contador2 < numero){
+            mensagem += `${frase} `; 
+            contador2++;
+        }
         while(contador < numero){
         contador++;
-            alert(frase)
+            
+            alert(mensagem)
             
 
         }

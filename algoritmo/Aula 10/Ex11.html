@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe qual tabuada deseja:
+    <br><br>
+
+    <select id="select_tabuada">
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+    </select>
+    <br><br>
+    Informe qual até qual número deseja ver a tabuada:
+    <br><br>
+    <input type="number" id="input_limite">
+    <br><br>
+
+    <button onclick="ver()">Ver tabuada</button>
+    <br><br>
+
+    <div id="div_mensagem">
+    </div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        div_mensagem.innerHTML = "";
+        var contador = 0; 
+        var mensagem = "";
+        var limite = Number(input_limite.value); 
+        var tabuada = Number(select_tabuada.value);
+        var resultado = 0;
+
+
+        while(contador <= limite){
+
+            resultado = contador * tabuada;
+
+            if(resultado % 2 ==0){
+                mensagem  += `<p style="color: blue;">${tabuada} X ${contador} = ${resultado}</p> <br>`;
+                contador++;
+            }else{
+                mensagem  += `<p style="color: red;">${tabuada} X ${contador} = ${resultado}</p> <br>`;
+                contador++
+            }
+        }
+
+        div_mensagem.innerHTML = mensagem;
+    }
+
+
+</script>

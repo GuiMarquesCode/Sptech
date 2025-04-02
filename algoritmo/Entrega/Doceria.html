@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria</title>
+</head>
+<body>
+    
+    <h1>Doceria Gourmet!</h1>
+    <br><br>
+    Informe a seguinte quantidade e i oreço dos doces vendidos
+    <br><br><br>
+    <hr>
+    <br>
+
+    -<b>Macarrons:</b> um doce francês feito com duas conchas de amêndoa com recheio no meio, que são populares por sua aparência colorida e delicada, bem como seus sabores únicos;
+    <br><br>
+    Quant:<input type="number" id="input_qtd_Mac"> <br> Preço:<input type="number" id="input_prc_Mac">
+    
+    <br><br><br>
+
+    -<b>Brigadeiros:</b> um doce brasileiro feito com leite condensado, manteiga e chocolate em pó, que nas versões gourmet, geralmente apresentam sabores inovadores e criativos, como creme de avelã, limão siciliano, café, entre outros;
+    <br><br>
+    Quant:<input type="number" id="input_qtd_Brig"> <br> Preço:<input type="number" id="input_prc_Brig">
+    <br><br>
+
+    -<b>Cupcake:</b> mini bolos decorados com glacê e recheados com sabores deliciosos, como baunilha, chocolate, red velvet, entre outros, dos quais são populares em casamentos, festas de aniversário e outros eventos;
+    <br><br>
+    Quant:<input type="number" id="input_qtd_Cup"> <br> Preço:<input type="number" id="input_prc_Cup">
+    <br><br>
+
+    -<b>Cheesecakes:</b>: uma sobremesa feita com cream cheese, açúcar e biscoitos triturados para a base, nos quais geralmente apresentam sabores como framboesa, caramelo salgado, limão, entre outros;
+    <br><br>
+    Quant:<input type="number" id="input_qtd_Chee"> <br> Preço:<input type="number" id="input_prc_Chee">
+    <br><br>
+
+    <button onclick="verificar()">Verificar Vendas</button>
+    <br><br>
+
+    <div id="div_mensagem">
+    </div>
+</body>
+</html>
+
+<script>
+    function verificar(){
+                var Mac_qtd  = Number(input_qtd_Mac.value);
+                var Mac_prc  = Number(input_prc_Mac.value);
+                var Brig_qtd  = Number(input_qtd_Brig.value);
+                var Brig_prc  = Number(input_prc_Brig.value);
+                var Cup_qtd  = Number(input_qtd_Cup.value);
+                var Cup_prc  = Number(input_prc_Cup.value);
+                var Chee_qtd = Number(input_qtd_Chee.value);
+                var Chee_prc = Number(input_prc_Chee.value);
+                var mensagem = "";
+                
+                var totalCo3mpra = ((Mac_prc * Mac_qtd) + (Brig_prc * Brig_qtd) + (Cup_prc * Cup_qtd) + (Chee_prc * Chee_qtd));
+
+                if(Mac_qtd < 0 &&  Brig_qtd < 0 && Cup_qtd < 0 && Chee_prc < 0){
+                    
+                    
+        }else{
+            var venda =  0;
+            var contador = 0;
+
+            while(contador < Mac_qtd){
+                venda++;
+                contador++;
+                mensagem += `Venda ${venda}<img src="https://www.estadao.com.br/resizer/v2/SFYPBGYE75GDJENLY7475OLBQM.jpeg?quality=80&auth=201862390ce660e696fa114a2bc98bbee99ee779f5aea07ef2e5dfd867e84c7f&width=720&height=503&smart=true" style= "height: 100px;"><>R$${Mac_prc} <br>`;
+                
+            }
+            
+            contador = 0;
+
+            while(contador < Brig_qtd){
+                venda++;
+                contador++;
+                mensagem += `Venda ${venda}<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXC3P-DM6Zrafn4k7rZf0uOR5Qi5OfATbfA&s" style= "height: 100px;">R$${Brig_prc} <br>`;
+                
+            }
+            
+            contador = 0;
+            
+            while(contador < Cup_qtd){
+                venda++;
+                contador++;
+                mensagem += `Venda ${venda} <img src="https://recipesblob.oetker.com.br/assets/831ea87ef22440b7b8e986c7c0416d9e/1272x764/cupcake_festivo_1.webp" style= "height: 100px;">R$${Cup_prc} <br>`;
+                
+            }
+            
+            contador = 0;
+
+            while(contador < Chee_qtd){
+                venda++;
+                contador++;
+                mensagem += `Venda ${venda} <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/aa27bc261783720f26cef166ad39c76e.jpg?itok=f5Fv_zRQ" style= "height: 100px;">R$${Chee_prc} <br>`;
+                
+            }
+            
+            contador = 0;
+            mensagem +=`<h1>Com a quantidade de ${Mac_qtd} Macarons, ${Brig_qtd} Brigadeiros, ${Cup_qtd} Cupcakes e ${Chee_qtd} Cheesecakes, a venda totalizará R$${totalCompra}</h1>`;
+            div_mensagem.innerHTML = mensagem;
+        }
+    }
+</script>

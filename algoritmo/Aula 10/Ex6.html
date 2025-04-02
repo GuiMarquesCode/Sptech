@@ -23,7 +23,9 @@
         var numero = Number(input_numero.value);
         var contador = 0;
         div_mensagem.innerHTML = "";
-        while(contador <= numero && (numero >= 20 || numero <= 100)){
+
+        if(numero >= 20 && numero <= 100){
+             while(contador <= numero ){
             if(contador % 5 == 0 ){
                 div_mensagem.innerHTML += `${contador} <br>`;
                 contador++;
@@ -31,6 +33,10 @@
                 contador++;
             }
         }
+        }else{
+            div_mensagem.innerHTML = "Informe um número válido!";
+        }
+       
 
     }
 

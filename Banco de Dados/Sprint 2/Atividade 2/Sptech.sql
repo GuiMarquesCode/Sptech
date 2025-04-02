@@ -73,4 +73,14 @@ UPDATE usuario SET FkEmail = 4 WHERE idUsuario = 4;
 SELECT Func.nome as Nome_func, gerente.nome as Nome_gerente , EmailUser.Email as Email_do_usuario 
 FROM usuario as Func 
 JOIN usuario as gerente on Func.fkGerente = gerente.idUsuario 
-join Email as EmailUser on Func.FkEmail = Email.idEmail;
+join Email as EmailUser on Func.FkEmail = EmailUser.idEmail;
+
+SELECT Func.nome as Nome_func, gerente.nome as Nome_gerente , EmailUser.Email as Email_do_usuario 
+FROM usuario as Func 
+JOIN usuario as gerente on Func.fkGerente = gerente.idUsuario 
+join Email as EmailUser on Func.FkEmail = EmailUser.idEmail where gerente.nome = "Carlos Silva" ;
+
+SELECT Func.nome as Nome_func, gerente.nome as Nome_gerente , EmailUser.Email as Email_do_usuario , case when gerente.nome = "Carlos Silva" then "muito bom" else "Mais ou menos" end as "Avaliação Gerencia"
+FROM usuario as Func 
+JOIN usuario as gerente on Func.fkGerente = gerente.idUsuario 
+join Email as EmailUser on Func.FkEmail = EmailUser.idEmail;
