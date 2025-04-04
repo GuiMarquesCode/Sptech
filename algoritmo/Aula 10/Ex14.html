@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe de quanto em quanto dias você faz musculação: 
+    <br><br>
+
+    <input type="number" id="input_dias">
+    <br><br>
+    <button onclick="exibir()">Exibir rotinha</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function exibir(){
+
+        var dias  = Number(input_dias.value);
+        var mensagem = "";
+        var contador = 0;
+        var dias2 = 0;
+        while(contador < 30){
+            contador++;
+            if(dias2 < 30 ){
+                dias2 = dias2 + dias;
+                mensagem += `Dia ${contador} - Musculação<br>`
+            }else{
+                mensagem += `Dia ${contador} -  Comer, dormir etc<br>`
+            }
+        }
+        div_mensagem.innerHTML = mensagem;
+        
+    }
+
+</script>
