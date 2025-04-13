@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pares</title>
+</head>
+<body>
+    Informe um intervalo crescente entre valores numericos:
+    <br><br>
+    Minimo:
+    <input type="number" id="input_minimo">
+    <br>
+    Maximo:
+    <input type="number" id="input_maximo">
+    <br><br>
+    <button onclick="contagem()">Curto 3 e 5</button>
+    <br><br>
+
+    <div id="div_mensagem">
+
+    </div>
+</body>
+</html>
+<script>
+    function contagem(){
+
+    
+    var numeroMax = Number(input_maximo.value);
+
+    var numeroMin = Number(input_minimo.value);
+    var mensagem = "";
+    div_mensagem.innerHTML  = "";
+   
+    var contador = numeroMin;
+    if(numeroMin < numeroMax  && numeroMin > 0 && numeroMax <= 100 ){
+    while(contador <= numeroMax){
+
+        if(contador % 3 == 0 && contador % 5 ==0){
+            mensagem += `FizzBuzz<br>`;
+            contador++;
+        }else if(contador % 3 == 0){
+            mensagem += `Fizz<br>`;
+            contador++;
+
+        }else if(contador % 5== 0){
+            mensagem += `Buzz<br>`;
+            contador++;
+        }else{
+            mensagem += `${contador}<br>`;
+            contador++;
+        }
+        
+    }
+    mensagem += "Contagem finalizada";
+    div_mensagem.innerHTML = mensagem;
+}else{
+    div_mensagem.innerHTML = "informe um número válido!";
+}
+
+}
+</script>

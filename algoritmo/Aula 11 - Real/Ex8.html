@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Informe quantos depósitos fez ao banco:
+    <br>
+    <input type="number" id="input_depositos">  
+    <br><br>
+    
+    Informe o valor de cada depósito: 
+    <br>
+    <input type="number" id="input_valor">
+    <br><br>
+
+    <button onclick="acompanhar()">Acompanhar grana</button>
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function acompanhar(){
+
+    var mensagem = ""; 
+    var qtdDepositos = Number(input_depositos.value);
+    var valor = Number(input_valor.value);
+    var saldo = 0; 
+    
+
+    for(contador = 1; contador <= qtdDepositos ; contador++){
+        
+
+        if(contador % 3 ==0){
+        saldo = (saldo + valor) * 1.01;
+        mensagem += `${contador}º Mês: ${saldo} <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIF-PL3_9CGdl1v-1MR0OGlbWqSdSzAEZpw&s" style = "height: 10px"<br><br><br>`;
+        }else{
+        saldo = (saldo + valor);
+        mensagem += `${contador}º Mês: ${saldo} <br><br>`;
+        }
+
+
+    }
+    mensagem += `Total guardado: R$${saldo}`;
+    div_mensagem.innerHTML = mensagem;
+
+    }
+
+</script>

@@ -15,12 +15,13 @@
 <script>
 
     function calcular(){
-        var contador = 0;
+       
         var mensagem = "";
-        while(contador <= 100){
+
+        for(var contador =0; contador <= 100; contador +=2 ){
             
             mensagem += `Número atual: ${contador} <br>`;
-            contador +=  2;
+            
             
         }
         div_mensagem.innerHTML = mensagem;

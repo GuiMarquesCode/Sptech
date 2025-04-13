@@ -6,10 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    Digite uma frase: 
-    <br>
-    <input type="text" id="input_frase">
-
     <button onclick="falar()">Diga algo sobre a matéria de Algoritmos</button>
     <br><br>
     <div id="div_mensagem"></div>
@@ -18,16 +14,12 @@
 
 <script>
     function falar(){
-        var frase = input_frase.value;
-        var contador = 0;
-        var mensagem = "";
+        
 
-        while(contador <= 7){
-            mensagem += `${contador}- ${frase}  <br>`;
-            contador++;
+        for(var contador = 0; contador <= 7; contador++){
+            div_mensagem.innerHTML += `JP amassa <br>`;
+            
         }
-
-        div_mensagem.innerHTML = mensagem;
 
     }
 

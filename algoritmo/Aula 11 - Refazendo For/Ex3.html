@@ -6,24 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="calcular()">S2 Pares</button>
+    Digite uma frase: 
+    <br>
+    <input type="text" id="input_frase">
 
+    <button onclick="falar()">Diga algo sobre a matéria de Algoritmos</button>
+    <br><br>
     <div id="div_mensagem"></div>
 </body>
 </html>
 
 <script>
-
-    function calcular(){
-        var contador = 0;
+    function falar(){
+        var frase = input_frase.value;
+        
         var mensagem = "";
-        while(contador <= 100){
-            
-            mensagem += `Número atual: ${contador} <br>`;
-            contador +=  2;
+
+        for(var contador = 0; contador <= 7; contador++ ){
+            mensagem += `${contador}- ${frase}  <br>`;
             
         }
+
         div_mensagem.innerHTML = mensagem;
+
     }
 
 </script>

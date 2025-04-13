@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número entre 20 e 100:
+    <br><br>
+
+    <input type="number" id="input_numero">
+    <br><br>
+
+
+    <button onclick="verificar()">Adoro múltiplos de 5"</button>
+    <div id="div_mensagem">
+    </div>
+</body>
+</html>
+<script>
+    function  verificar(){
+        var numero = Number(input_numero.value);
+        var mensagem = ""
+        
+        div_mensagem.innerHTML = "";
+
+        if(numero >= 20 && numero <= 100){
+             for(var contador = 0; contador <= numero ; contador++){
+            if(contador % 5 == 0 ){
+                mensagem += `${contador} <br>`;
+            }
+            div_mensagem.innerHTML = mensagem;
+        }
+        }else{
+            div_mensagem.innerHTML = "Informe um número válido!";
+        }
+       
+
+    }
+
+</script>

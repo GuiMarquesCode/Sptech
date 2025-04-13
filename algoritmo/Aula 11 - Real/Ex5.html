@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe quantas xícaras de café com leite você acha que já bebeu na vida;
+    <br>
+    <input type="number" id="input_xicaras">
+    <br><br>
+
+    <button onclick="verificar()">Ver a quantidade</button>
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+
+        var numXicaras = Number(input_xicaras.value);
+        var mensagem = "";
+
+
+        for(var contador = 1; contador <= (numXicaras * 2) ; contador++){
+
+           mensagem += `<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfWF4-LjFLsjvY7nRQZoAq9H-jzGFHHmM39xLBmu6B5rGIzrER1rEFcu-vNMvz0MnqBZ0gluHXoYAeK_xOinLlazsvPP99fM1D1gt-awD1_mfAEo5BYi5krMTknROMZ-yT13alInTfYn_BnyS2fhYiBjEUmCIOf-IE4xYc7xShVFd2toFIlGyqfGMbGG8t/s650/Colher%20de%20caf%C3%A9.jpg" style = "height: 100px;">`
+
+        }
+
+        mensagem += "<br>";
+
+        for(var contador2 = 1; contador2 <= numXicaras; contador2++ ){
+
+             mensagem += `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjsgpvDdRWMau9xooR7iPeduUjsT5G-NzUWQ&s" style = "height: 100px;">`
+
+        }
+
+
+        div_mensagem.innerHTML = mensagem;
+
+     }
+
+</script>  
+
+<!-- <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfWF4-LjFLsjvY7nRQZoAq9H-jzGFHHmM39xLBmu6B5rGIzrER1rEFcu-vNMvz0MnqBZ0gluHXoYAeK_xOinLlazsvPP99fM1D1gt-awD1_mfAEo5BYi5krMTknROMZ-yT13alInTfYn_BnyS2fhYiBjEUmCIOf-IE4xYc7xShVFd2toFIlGyqfGMbGG8t/s650/Colher%20de%20caf%C3%A9.jpg" style = "height: 100px;">  -->
+<!-- <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjsgpvDdRWMau9xooR7iPeduUjsT5G-NzUWQ&s" style = "height: 100px;"> -->

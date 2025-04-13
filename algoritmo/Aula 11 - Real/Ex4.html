@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe quantas coca-colas acha que já bebeu na vida;
+    <br>
+    <input type="number" id="input_latinhas">
+    <br><br>
+
+    <button onclick="verificar()">Ver a quantidade</button>
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+
+        var numLatinhas = Number(input_latinhas.value);
+        var mensagem = "";
+
+
+        for(var contador = 1; contador <= numLatinhas ; contador++){
+
+            mensagem += `<img src="https://img.cdndsgni.com/preview/10000392.jpg" style = "height: 100px;"> ${contador}`;
+        }
+
+        div_mensagem.innerHTML = mensagem;
+
+     }
+
+</script>

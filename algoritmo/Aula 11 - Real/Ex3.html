@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe quantas pessoas vão entrar no carro:
+    <br>
+    <input type="number" id="input_numero">
+    <br><br>
+
+    Informe a capacidade máxima que seu carro comporta:
+    <br>
+    <input type="number" id="input_capacidade">
+    <br><br>
+
+    <button onclick="verificar()">#Partiu Carona"</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+    <br><br>
+   
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var num = Number(input_numero.value);
+        var capacidade = Number(input_capacidade.value);
+        var mensagem = "";
+
+        for(var contador =  1; contador <= num ; contador++){
+
+            if(contador == 1){
+                mensagem += `Entrou o ${contador} passageiro (que é o(a) motorista) <br>`;
+            }else if(contador <= capacidade){
+                mensagem += `Entrou o ${contador} passageiro <br>`;
+            }else{
+                mensagem += `O ${contador} passageiro terá que esperar! <br>`;
+            }
+
+        }
+
+        div_mensagem.innerHTML = mensagem;
+
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    linhas
+    <input type="number" id="input_linhas"><br>
+
+    Caracteres: 
+    <input type="number" id="input_caracteres">
+    <button onclick="exibir()">Exibir matriz</button>    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function exibir(){
+        var numLinha = Number(input_linhas.value);
+        var caracter = Number(input_caracteres.value)
+        var mensagem = "";
+
+        for( var contador = 1; contador <= numLinha; contador++){
+            var frase = "";
+            for(var caracteres = 1; caracteres <= caracter; caracteres++){
+                frase += `${contador}`;
+            }
+           mensagem += `${frase}<br>`;
+        }
+
+        div_mensagem.innerHTML = mensagem;
+
+    }
+
+</script>

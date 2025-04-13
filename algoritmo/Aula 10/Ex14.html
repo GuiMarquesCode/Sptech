@@ -22,17 +22,22 @@
 
         var dias  = Number(input_dias.value);
         var mensagem = "";
-        var contador = 0;
-        var dias2 = 0;
-        while(contador < 30){
-            contador++;
-            if(dias2 < 30 ){
-                dias2 = dias2 + dias;
-                mensagem += `Dia ${contador} - Musculação<br>`
+        var contador = 1;
+       
+       while(contador < 30){
+        
+            if(contador % dias == 1 || dias == 1){
+                
+                mensagem += `Dia ${contador} - Musculação<br>`;
+                
             }else{
-                mensagem += `Dia ${contador} -  Comer, dormir etc<br>`
+                mensagem += `Dia ${contador} - Comer, Dormir, etc.<br>`;
             }
-        }
+
+           contador++;
+          
+       } 
+        
         div_mensagem.innerHTML = mensagem;
         
     }
