@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    img{
+        height: 200px;
+    }
+
+</style>
+<body>
+    Jogador 1: 
+    <div id="div_jogador1"></div>
+
+    Jogador 2:
+    <div id="div_jogador2"></div>
+    <br>
+    <br>
+    <button onclick="sortear()">Jogar</button>
+
+    <br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+        var contadorJ1 = 0
+        var contadorJ2 = 0
+    function sortear(){
+        
+        var Jogador1 = parseInt(Math.random() *3);
+        var Jogador2 = parseInt(Math.random() *3);
+        
+
+        if(Jogador1 == 0 || Jogador2 == 0){
+            
+        }
+
+
+        if(Jogador1 == Jogador2){
+            div_menagem.innerHTML = "Empate!";
+        }else if(){
+
+        }
+
+
+    }
+
+</script>

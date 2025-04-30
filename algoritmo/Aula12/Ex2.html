@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sortear()">Sortear</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+    function sortear() {
+        var mensagem = '';
+        var aleatorio = parseInt(Math.random() * 4);
+
+        if (aleatorio == 1) {
+            mensagem = '<img src = "https://a.espncdn.com/i/teamlogos/soccer/500/874.png" style = "height: 150px;">'
+        } else if (aleatorio == 2) {
+            mensagem = '<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/800px-Palmeiras_logo.svg.png" style = "height: 150px;">'
+        } else if (aleatorio == 3) {
+            mensagem = '<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/250px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" style = "height: 150px;">'
+        } else {
+            mensagem = '<img src = "https://upload.wikimedia.org/wikipedia/pt/5/5c/AAInternacional.png" style = "height: 150px;">'
+        }
+        div_mensagem.innerHTML = mensagem
+    }
+
+
+</script>

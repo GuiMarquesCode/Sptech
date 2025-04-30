@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url(https://cdn.pixabay.com/animation/2023/11/08/17/50/17-50-28-149_512.gif);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        
+    }
+
+    #div_mensagem{
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+    }
+
+</style>
+<body>
+    <button onclick="sortear()">Sortear</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function sortear(){
+
+        var aleatorio = parseInt(Math.random() * 20);
+        div_mensagem.innerHTML = aleatorio + 1;
+
+    }
+
+</script>

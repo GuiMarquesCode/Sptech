@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Min:
+    <input type="number" id="input_min">
+    <br><br>
+
+    Max:
+    <input type="number" id="input_max">
+    <br><br>
+
+    <button onclick="randomizar()">Randominzar</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+
+    function randomizar() {
+        var min = Number(input_min.value);
+        var max = Number(input_max.value);
+        var mensagem = '';
+        var intervalo = max - min;
+
+        var aleatorio = Math.random();
+        var aleatorio_min_max = parseInt( aleatorio * intervalo + min);
+        
+
+        mensagem += `Número sorteado: ${aleatorio} <br> 
+        Número: ${ aleatorio_min_max}`;
+
+        div_mensagem.innerHTML = mensagem;
+    }
+</script>
